@@ -42,10 +42,12 @@
             borderRadius: '10px',
           }">
             {{ message.role === 'user' ? '私: ' : 'AI: ' }}
-            {{ message.content }}
+            <AssistantMessage :content="message.content" class="px-1" />
           </v-card>
         </v-sheet>
-        <v-form @submit="handleSubmit" :style="{ position: 'fixed', bottom: '50px', width: '80%' }">
+        <v-form @submit="handleSubmit" 
+          :style="{ position: 'fixed', bottom: '50px', width: '80%' }"
+          >
           <v-textarea v-model="input"
             clearable auto-grow counter variant="solo"
             label="メッセージを送信"
