@@ -32,7 +32,7 @@
 
     <v-main>
       <v-container>
-        <v-sheet v-for="message in messages" :key="message.id" class="my-16 d-flex" :style="{
+        <v-sheet :ref="chat_area" v-for="message in messages" :key="message.id" class="my-16 d-flex" :style="{
           position: 'relative',
         }">
           <v-avatar :color="message.role === 'user' ? 'primary' : 'secondary'" class="mr-2">
@@ -61,7 +61,7 @@
               >mdi-home</v-icon>
             </template>
             <template #append-inner>
-              <v-icon :color="input ? '' : ''" @click="handleSubmit" :disabled="!input">mdi-send</v-icon>
+              <v-icon :color="input ? 'primary' : ''" @click="handleSubmit" :disabled="!input">mdi-send</v-icon>
             </template>
           </v-textarea>
         </v-form>
@@ -82,8 +82,21 @@ export default {
   data: () => ({
     drawer: false,
   }),
+  updated() {
+      this.scrollToEnd()
+  },
+  methods: {
+      scrollToEnd() {
+            this.$nextTick(() => {
+                const chatLog = this.$refs.chat_area
+                if (!chatLog) return
+                chatLog.scrollTop = chatLog.scrollHeight
+            })
+      }
+  }
 }
 </script>
+
 <script setup>
 // import { useChat } from 'ai/vue'
 import { useChat } from '@ai-sdk/vue';
