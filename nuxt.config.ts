@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: [
     // '@nuxthub/core',
     // '@nuxt/eslint',
-    // '@nuxt/ui',
+    '@nuxt/ui',
     '@nuxtjs/mdc',
     // '@vueuse/nuxt',
     // 'nuxthub-ratelimit',
