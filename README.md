@@ -117,3 +117,25 @@ export default defineNuxtPlugin((nuxtApp) => {
 ```
 
 続きは、[Nuxt3 × Vuetify3 × LangChain × OpenAIでチャットボットを作成してみた #langchain - Qiita](https://qiita.com/tatsuki-tsuchiyama/items/a156b3d633e3dd89696d#vuetify3の導入)　を参照してください！！
+
+
+## OpenAI の アクセスキーを設定
+
+このサーバーからOpenAI のLLMを呼び出していますので、  
+ご自身のOpenAIのアカウントのAPIキーを登録してください。
+
+### API登録方法
+
+.env ファイルをルートに新規作成して
+```txt:.env
+OPENAI_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx を、自身のOpenAI のAPIキーを設定してください。
+
+## 実行
+
+### デバック実行
+```bash
+npm run dev
+```
+
