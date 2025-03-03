@@ -56,6 +56,7 @@
               label="メッセージを送信"
               bg-color="red"
               rows="1"
+              @keydown.enter.shift="handleSubmit"
               >
               <template #prepend>
                 <v-icon
