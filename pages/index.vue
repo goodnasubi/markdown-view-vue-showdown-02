@@ -42,7 +42,9 @@
               borderRadius: '10px',
             }">
               {{ message.role === 'user' ? '私: ' : 'AI: ' }}
-              <div>--- オリジナルのレスポンス:<br />{{ message.content }}<br /><br />--- markdown変換後:</div>
+              <div>--- オリジナルのレスポンス: --------<br />
+                <AssistantMessageOriginalView :content="message.content" />
+                <br />--- markdown変換後: --------</div>
               <AssistantMessage :content="message.content" class="px-1" />
             </v-card>
           </v-sheet>
