@@ -15,6 +15,8 @@ Nuxt Minimal Starter
 
 - [Vuetify3 の基本 - Zenn](https://zenn.dev/bbled/books/vuetify3_book)
 
+- [chat-with-pdf](https://github.com/RihanArfan/chat-with-pdf?tab=readme-ov-file)
+
 ## Setup
 
 Make sure to install dependencies:
